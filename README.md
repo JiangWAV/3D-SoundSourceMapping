@@ -2,8 +2,9 @@
 Accurately localizing sound sources and mapping them into the environment is crucial for human–robot interaction and augmented reality. Existing methods typically assume that other sensors, such as cameras or LiDAR, have been spatially calibrated with the microphone array, allowing their measured poses (i.e., orientation and translation) to be converted into the microphone array poses. However, estimating the relative pose between sensors is a complex task. In this work, we propose a 3D sound source mapping method using an acoustic camera with unknown relative poses between the camera and the microphone array.
 
 <div align="center">
-    <img src="fig/result1.jpg" width = 45% >
-    <img src="fig/result2.jpg" width = 45% >
+    <img src="fig/setup.jpg" width = 28% >
+    <img src="fig/result1.jpg" width = 28% >
+    <img src="fig/result2.jpg" width = 28% >
 </div>
 
 # Prerequisites
