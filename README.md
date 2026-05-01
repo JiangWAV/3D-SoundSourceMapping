@@ -1,4 +1,4 @@
-# 3D-SoundSourceMapping
+# 3D-Sound Source Mapping
 Accurately localizing sound sources and mapping them into the environment is crucial for human–robot interaction and augmented reality. Existing methods typically assume that other sensors, such as cameras or LiDAR, have been spatially calibrated with the microphone array, allowing their measured poses (i.e., orientation and translation) to be converted into the microphone array poses. However, estimating the relative pose between sensors is a complex task. In this work, we propose a 3D sound source mapping method using an acoustic camera with unknown relative poses between the camera and the microphone array.
 
 <div align="center">
@@ -54,7 +54,24 @@ rosrun ORB_SLAM2 RGBD Vocabulary/ORBvoc.txt Examples/RGB-D/orbbec335l.yaml
 rosrun ORB_SLAM2 SSM.py
 ```
 
-## 4. Play ROSBAG
+## 4. Play [ROSBAG](https://pan.baidu.com/s/1SHPVt14nPlxGMr72WF4YGw?pwd=ahqg)
 ```bash
-rosbag play DESK_SOUND_SOURCE.bag.bag /camera/color/image_raw:=/camera/rgb/image_raw /camera/depth/image_raw:=/camera/depth_registered/image_raw
+rosbag play DESK_SOUND_SOURCE.bag /camera/color/image_raw:=/camera/rgb/image_raw /camera/depth/image_raw:=/camera/depth_registered/image_raw
+```
+## License
+The source code and dataset are released under [GPLv3](http://www.gnu.org/licenses/) license.
+
+## Citation
+Please cite the paper if you feel helpful for your research.
+
+```bibtex
+@INPROCEEDINGS{26SSM,
+  author={Wang, Jiang and Shi, Runwu and Li, Jiahui and Kong, He and Nakadai, Kazuhiro},
+  booktitle={ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
+  title={Manifold-Optimization-Based 3D Sound Source Mapping with Unknown Camera-Microphone Array Relative Pose}, 
+  year={2026},
+  pages={21026-21030},
+  keywords={Location awareness;Mobile communication;Protocols;HTTP;Indoor environment;Machine learning;Boosting;Deep learning;Reinforcement learning;Learning systems;Sound source mapping;acoustic camera;optimization},
+  doi={10.1109/ICASSP55912.2026.11462576}}
+}
 ```
