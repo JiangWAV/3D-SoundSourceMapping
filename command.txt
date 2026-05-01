@@ -1,0 +1,22 @@
+align the depth image to the color image
+roslaunch orbbec_camera gemini_330_series.launch depth_registration:=true
+
+view
+roslaunch orbbec_camera gemini_330_series.launch depth_registration:=true enable_d2c_viewer:=true
+
+
+rosbag record  /camera/depth_to_color/image_raw /camera/color/image_raw /camera/depth/image_raw
+
+
+rosrun ORB_SLAM2 RGBD Vocabulary/ORBvoc.txt Examples/RGB-D/orbbec335l.yaml
+
+rosrun ORB_SLAM2 SSM.py
+
+rosbag play data_11.bag /camera/color/image_raw:=/camera/rgb/image_raw /camera/depth/image_raw:=/camera/depth_registered/image_raw
+
+rostopic pub /sound_source_position geometry_msgs/Point "{x: 1, y: 0.3, z: 1}"
+
+rosrun ORB_SLAM2 SSM.py _trajectory_file:=/home/jiang/Downloads/ORB_SLAM2/16chnnel/0830/camera_pose_300ms_30fps_bag11.npy _doa_file:=/home/jiang/Downloads/ORB_SLAM2/16chnnel/0830/DOA_300ms_bag11.npy
+
+
+rosrun ORB_SLAM2 SSM.py _doa_file:=/home/jiang/Downloads/ORB_SLAM2/16chnnel/0830/DOA_300ms_bag11.npy
