@@ -11,8 +11,6 @@ Accurately localizing sound sources and mapping them into the environment is cru
 We have tested the library in **Ubuntu 18.04**, but it should be easy to compile in other platforms. A powerful computer will ensure more stable and accurate results.
 
 ## C++11 or C++0x Compiler
-We use the new thread and chrono functionalities of C++11.
-
 ## Pangolin
 We use [Pangolin](https://github.com/stevenlovegrove/Pangolin) for visualization and user interface. Dowload and install instructions can be found at: https://github.com/stevenlovegrove/Pangolin.
 
@@ -29,5 +27,3 @@ We use modified versions of the [DBoW2](https://github.com/dorian3d/DBoW2) libra
 We provide examples to process the input of RGB-D camera using [ROS](ros.org). Building these examples is optional. In case you want to use ROS, a version Melodic or newer is needed.
 
 # Building 3DSSM library and examples
-
-The code will be released upon acceptance of the paper.
