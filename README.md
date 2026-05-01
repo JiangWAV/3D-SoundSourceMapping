@@ -8,7 +8,7 @@ Accurately localizing sound sources and mapping them into the environment is cru
 </div>
 
 # Prerequisites
-We have tested the library in **Ubuntu 18.04**, but it should be easy to compile in other platforms. A powerful computer will ensure more stable and accurate results.
+We have tested the library in **Ubuntu 18.04 (ROS1)**, but it should be easy to compile in other platforms. A powerful computer will ensure more stable and accurate results.
 
 ## C++11 or C++0x Compiler
 ## Pangolin
@@ -24,6 +24,37 @@ Required by g2o (see below). Download and install instructions can be found at: 
 We use modified versions of the [DBoW2](https://github.com/dorian3d/DBoW2) library to perform place recognition and [g2o](https://github.com/RainerKuemmerle/g2o) library to perform non-linear optimizations. Both modified libraries (which are BSD) are included in the *Thirdparty* folder.
 
 ## ROS
-We provide examples to process the input of RGB-D camera using [ROS](ros.org). Building these examples is optional. In case you want to use ROS, a version Melodic or newer is needed.
+We provide examples to process the input of RGB-D camera using [ROS](ros.org).
 
 # Building 3DSSM library and examples
+
+```bash
+./build.sh
+# and
+./build_ros.sh
+```
+
+# How to run the Demo
+
+## 1. Start ROS
+
+Open a terminal:
+
+```bash
+roscore
+```
+
+## 2. Run the ORB-SLAM2 ROS Package
+```bash
+rosrun ORB_SLAM2 RGBD Vocabulary/ORBvoc.txt Examples/RGB-D/orbbec335l.yaml
+```
+
+## 3. Run SSM
+```bash
+rosrun ORB_SLAM2 SSM.py
+```
+
+## 4. Play ROSBAG
+```bash
+rosbag play DESK_SOUND_SOURCE.bag.bag /camera/color/image_raw:=/camera/rgb/image_raw /camera/depth/image_raw:=/camera/depth_registered/image_raw
+```
