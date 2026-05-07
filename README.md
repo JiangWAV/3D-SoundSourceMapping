@@ -10,6 +10,9 @@ Accurately localizing sound sources and mapping them into the environment is cru
 # Prerequisites
 We have tested the library in **Ubuntu 18.04 (ROS1)**, but it should be easy to compile in other platforms. A powerful computer will ensure more stable and accurate results.
 
+<a href="https://www.youtube.com/embed/KpNJJtaMPqY" target="_blank"><img src="http://img.youtube.com/vi/KpNJJtaMPqY/0.jpg" 
+alt="SSM" width="720" height="540" border="10" /></a>
+
 ## C++11 or C++0x Compiler
 ## Pangolin
 We use [Pangolin](https://github.com/stevenlovegrove/Pangolin) for visualization and user interface. Dowload and install instructions can be found at: https://github.com/stevenlovegrove/Pangolin.
